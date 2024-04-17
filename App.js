@@ -10,7 +10,9 @@ import ModuleRoutes from "./Kanbas/modules/routes.js";
 import cors from "cors";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
-mongoose.connect(CONNECTION_STRING);
+const DB_NAME = process.env.DB_NAME;
+
+mongoose.connect(CONNECTION_STRING, { dbName: DB_NAME });
 const app = express();
 app.use(
   cors({
