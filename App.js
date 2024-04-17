@@ -9,9 +9,8 @@ import CourseRoutes from "./Kanbas/courses/routes.js";
 import ModuleRoutes from "./Kanbas/modules/routes.js";
 import cors from "cors";
 
-mongoose.connect(
-  "mongodb+srv://Cluster85626:S3B0Ym9Wa1Jb@cluster85626.jwepohd.mongodb.net/kanbas",
-);
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
+mongoose.connect(CONNECTION_STRING);
 const app = express();
 app.use(
   cors({
@@ -23,6 +22,12 @@ const sessionOptions = {
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  proxy: true,
+  cookie: {
+    sameSite: "none",
+    secure: true,
+    domain: "https://kanbas-node-server-app-a6-tbeu.onrender.com",
+  },
 };
 if (process.env.NODE_ENV !== "development") {
   sessionOptions.proxy = true;
