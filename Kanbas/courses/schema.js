@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-const coursesSchema = new mongoose.Schema({
+const coursesSchema = new mongoose.Schema(
+  {
     id: String,
     name: String,
     number: String,
@@ -9,5 +10,6 @@ const coursesSchema = new mongoose.Schema({
     credits: Number,
     description: String,
   },
-  { collection: "courses" });
+  { collection: "courses" },
+);
 export default coursesSchema;
