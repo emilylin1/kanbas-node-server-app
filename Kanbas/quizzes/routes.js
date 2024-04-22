@@ -34,7 +34,7 @@ function QuizRoutes(app) {
   app.delete("/api/quizzes/:qid", deleteQuiz);
   app.post("/api/courses/:cid/quizzes", createQuiz);
   app.get("/api/courses/:cid/quizzes", findQuizzesForCourse);
-  app.delete("/api/quizzes/:qid", findQuizByQuizId);
+  app.get("/api/quizzes/:qid", findQuizByQuizId);
 
 }
 export default QuizRoutes;
