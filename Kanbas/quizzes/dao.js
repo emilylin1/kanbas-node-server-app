@@ -8,7 +8,7 @@ export const findQuizzesForCourse = (cid) =>
   model.find({ cid: cid });
 
 export const findQuizByQuizId = (qid) =>
-  model.findone({ _id: qid });
+  model.findOne({ _id: qid });
   
 export const updateQuiz = (qid, quiz) =>
   model.updateOne({ _id: qid }, { $set: quiz });
