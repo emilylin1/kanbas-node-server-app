@@ -5,7 +5,7 @@ const answersSchema = new mongoose.Schema(
     value: String,
     isCorrect: Boolean,
   },
-  { collection: "answers" }
+  { collection: "answers" },
 );
 
 const questionsSchema = new mongoose.Schema(
@@ -16,13 +16,14 @@ const questionsSchema = new mongoose.Schema(
     questionType: String,
     answers: [answersSchema],
   },
-  { collection: "questions" }
+  { collection: "questions" },
 );
 
 const quizzesSchema = new mongoose.Schema(
   {
     cid: String,
     title: String,
+    description: String,
     isPublished: Boolean,
     type: String,
     points: Number,
@@ -40,6 +41,6 @@ const quizzesSchema = new mongoose.Schema(
     untilDate: Date,
     questions: [questionsSchema],
   },
-  { collection: "quizzes" }
+  { collection: "quizzes" },
 );
 export default quizzesSchema;
