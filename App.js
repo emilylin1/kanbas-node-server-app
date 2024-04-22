@@ -7,6 +7,7 @@ import Hello from "./Hello.js";
 import Lab5 from "./Lab5.js";
 import CourseRoutes from "./Kanbas/courses/routes.js";
 import ModuleRoutes from "./Kanbas/modules/routes.js";
+import QuizzesRoutes from "./Kanbas/quizzes/routes.js"
 import cors from "cors";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
@@ -44,6 +45,7 @@ app.use(express.json());
 UserRoutes(app);
 ModuleRoutes(app);
 CourseRoutes(app);
+QuizzesRoutes(app);
 Hello(app);
 Lab5(app);
 app.listen(process.env.PORT || 4000);
