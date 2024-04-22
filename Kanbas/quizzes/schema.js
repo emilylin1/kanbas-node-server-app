@@ -22,7 +22,7 @@ const questionsSchema = new mongoose.Schema(
 const quizzesSchema = new mongoose.Schema(
   {
     cid: String,
-    name: String,
+    title: String,
     isPublished: Boolean,
     type: String,
     points: Number,
