@@ -16,7 +16,13 @@ export const updateQuiz = (qid, quiz) =>
 export const updateQuestion = (qid, questionId, question) => {
     return model.updateOne(
         { _id: qid, "questions._id": questionId },
-        { $set: { "questions.$.title": question.title } }
+        { $set: { 
+            "questions.$.title": question.title,
+            "questions.$.question": question.question,
+            "questions.$.points": question.points,
+            "questions.$.questionType": question.questionType,
+            "questions.$.answers": question.answers,        
+        } }
     )
 };
 
