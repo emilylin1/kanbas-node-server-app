@@ -25,6 +25,12 @@ function QuizRoutes(app) {
     res.json(status);
   };
 
+  const updateQuestion = async (req, res) => {
+    const { qid, questionId } = req.params;
+    const status = await dao.updateQuestion(qid, questionId, req.body);
+    res.json(status);
+  };
+
   const deleteQuiz = async (req, res) => {
     const status = await dao.deleteQuiz(req.params.qid);
     res.json(status);
@@ -35,6 +41,7 @@ function QuizRoutes(app) {
   app.post("/api/courses/:cid/quizzes", createQuiz);
   app.get("/api/courses/:cid/quizzes", findQuizzesForCourse);
   app.get("/api/quizzes/:qid", findQuizByQuizId);
+  app.put("/api/quizzes/:qid/:questionId", updateQuestion);
 
 }
 export default QuizRoutes;
