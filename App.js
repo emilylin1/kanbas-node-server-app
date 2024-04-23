@@ -30,7 +30,7 @@ const sessionOptions = {
   cookie: {
     sameSite: "none",
     secure: true,
-    domain: "https://kanbas-node-server-app-a6-tbeu.onrender.com",
+    domain: "https://kanbas-node-server-app-project-hhqs.onrender.com",
   },
 };
 if (process.env.NODE_ENV !== "development") {
